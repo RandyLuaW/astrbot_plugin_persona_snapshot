@@ -1,0 +1,37 @@
+{
+  "enabled": {
+    "type": "bool",
+    "default": true,
+    "description": "启用人格快照。关闭后不再自动存档，工具也不可用（已存的快照文件仍保留）。"
+  },
+  "check_interval_seconds": {
+    "type": "int",
+    "default": 60,
+    "description": "每隔多少秒检查一次 personas 表有没有被改动。改完最多这么久就会被存档。"
+  },
+  "max_snapshots_per_persona": {
+    "type": "int",
+    "default": 40,
+    "description": "每个人格最多保留多少份快照，超出自动删最旧的。"
+  },
+  "snapshot_on_start": {
+    "type": "bool",
+    "default": true,
+    "description": "启动时先存一份当前状态作基线（已存过同样的内容就跳过）。"
+  },
+  "admin_only": {
+    "type": "bool",
+    "default": true,
+    "description": "只允许管理员私聊查看和回滚。开启后群里和普通用户拿不到这两个工具。"
+  },
+  "inject_hint": {
+    "type": "bool",
+    "default": true,
+    "description": "是否告诉她「你有快照机制、改坏了能回滚」。关掉后她仍能自己调用工具，但不会主动知道。"
+  },
+  "restore_requires_confirm": {
+    "type": "bool",
+    "default": true,
+    "description": "回滚时是否要求她再确认一次（先调 persona_snapshots 看清再退）。开启可防止退错版本。"
+  }
+}

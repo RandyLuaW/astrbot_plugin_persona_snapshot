@@ -1,0 +1,15 @@
+name: astrbot_plugin_persona_snapshot
+display_name: 人格快照
+desc: 人格文件的自动存档与回滚。后台轮询 personas 表，发现人格被改动就自动存一份旧版本；提供 persona_snapshots 查看历史、persona_restore 一键退回。解决「她直接改数据库改坏了没法回滚」的问题，并把这个能力明确告诉她自己。
+short_desc: 人格改动自动存档，改坏了能退回去
+author: Randy Lua
+repo: https://github.com/RandyLuaW/astrbot_plugin_persona_snapshot
+version: 1.0.0
+astrbot_version: ">=4.17.0"
+support_platforms:
+  - aiocqhttp
+tags:
+  - 人格
+  - 备份
+  - 回滚
+  - 自我修改
