@@ -4,7 +4,7 @@ desc: 人格文件的自动存档与回滚。后台轮询 personas 表，发现�
 short_desc: 人格改动自动存档，改坏了能退回去
 author: Randy Lua
 repo: https://github.com/RandyLuaW/astrbot_plugin_persona_snapshot
-version: 1.0.0
+version: 1.0.1
 astrbot_version: ">=4.17.0"
 support_platforms:
   - aiocqhttp

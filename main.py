@@ -3,10 +3,9 @@
 
 为什么需要
 ----------
-    她会在私聊里自己改人格（实测 2026-10-19 12:01：用 astrbot_execute_shell
-    摸到 data_v4.db，直接 UPDATE personas，给自己加了 117 字）。这条路能走通
-    是好事，但它没有任何退路——改坏了、改歪了、或者只是手滑写错一个字，
-    原来的版本就没了。
+    Bot 可能通过 shell 工具直接改数据库里的人格（`UPDATE personas`）。
+    这条路能走通是好事，但它没有任何退路——改坏了、改歪了、或者只是
+    手滑写错一个字，原来的版本就没了。
 
     这个插件补上退路：后台盯着 personas 表，一旦内容变了就先把**旧版本**存
     下来，再让改动落地。她改多少次都无所谓，随时能退回去。
@@ -399,7 +398,7 @@ class PersonaSnapshotPlugin(Star):
         退之前会先把现在的版本也存一份，所以退错了还能再退回来。
 
         Args:
-            snapshot_id (string): persona_snapshots 里看到的那个编号，比如 蓝色大肥鱼v21@20261019-120140
+            snapshot_id (string): persona_snapshots 里看到的那个编号，比如 my_persona@20260101-120000_3f9a1c
             confirm (boolean): 确认执行。第一次调用会被要求确认，看清楚后再带 true 调一次
         Returns:
             str: 结果
